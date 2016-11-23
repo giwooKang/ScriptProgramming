@@ -49,7 +49,7 @@
 <meta name="description" content="Breaking news and analysis from TIME.com. Politics, world news, photos, video, tech reviews, health, science and entertainment news." />
 <meta name="keywords" content="TIME.com, Breaking news, Politics, world news, photos, video, tech reviews, health, science and entertainment news." />
 <script type="text/javascript">try{window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:22,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:9,2:8,3:6,4:10,5:3,6:23,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:9,2:8,3:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],6:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,ee:"QJf3ax",gos:"7eSDFh"}],7:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:24,ee:"QJf3ax"}],8:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:24,ee:"QJf3ax"}],9:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=t("ee").create(),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:24,ee:"QJf3ax"}],10:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:6,2:24,ee:"QJf3ax"}],11:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:12,3:10,4:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],12:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],13:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:22,2:23,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-686.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:22,2:13,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],22:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],23:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],24:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:23,ee:"QJf3ax"}]},{},["G9z0Bl",4,11,5]);
-;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"7fc7d5aa08",applicationID:"11840999",sa:1,agent:"js-agent.newrelic.com/nr-686.min.js"}}catch(err){};</script>		<script src='https://r-login.wordpress.com/remote-login.php?action=js&amp;host=time.com&amp;id=1359921&amp;t=1479910478&amp;back=http%3A%2F%2Ftime.com%2F' type="text/javascript"></script>
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"7fc7d5aa08",applicationID:"11840999",sa:1,agent:"js-agent.newrelic.com/nr-686.min.js"}}catch(err){};</script>		<script src='https://r-login.wordpress.com/remote-login.php?action=js&amp;host=time.com&amp;id=1359921&amp;t=1479913804&amp;back=http%3A%2F%2Ftime.com%2F' type="text/javascript"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
 			if ( 'function' === typeof WPRemoteLogin ) {
@@ -110,7 +110,7 @@ img.emoji {
 <link rel='stylesheet' id='oldie-css'  href='https://s0.wp.com/wp-content/themes/vip/time2014/css/oldie.css?m=1432131068h&#038;ver=4.6.1-RC1-38499' type='text/css' media='all' />
 <![endif]-->
 <link rel='stylesheet' id='all-css-4-1' href='https://s1.wp.com/_static/??-eJx9i9EKgzAMAH9oXRAydA9j31JLFjPSRmxkv7/6MiaCb3dwBwLFXJKV+oNrqvUCnzk0cSoOeQ2zriytYbKglqKLlZ2El0ZZztaFRjVuyNCqPz1MPlGmChMCq41Rt+CZHx3e7ohD3+H7C83dQx4=' type='text/css' media='all' />
-<script>utag_data = {"channel":"time","friendly_url":"https:\/\/timedotcom.wordpress.com\/?iframe=true&width=80%25&height=80%25page\/1122","is_logged_in":"no","page_name":"home","site_section1":"main","site_theme":"v2","template_type":"section front","site_display_format":"desktop","page_type":"section front"};</script><script type='text/javascript' src='https://s2.wp.com/_static/??-eJyFjt0OgjAMRl/IMTGI3BifZbKKnezHtUDk6S2JXhiJJk2atKenn56SwtD2gwXSTuo+QH68WuFoo38BymOXDUPhMbzhNgaGwAvr4xl7UANBNp3MRHSJK1yKxB6IBFrZfkbCMCJMfzEHnEx7UxkI5y8rX0H+6RGTZvSw25bVorBILKEt5IBzlqOTP5bVodo3dd3U7gmUXW8m'></script>
+<script>utag_data = {"channel":"time","friendly_url":"https:\/\/timedotcom.wordpress.com\/","is_logged_in":"no","page_name":"home","site_section1":"main","site_theme":"v2","template_type":"section front","site_display_format":"desktop","page_type":"section front"};</script><script type='text/javascript' src='https://s2.wp.com/_static/??-eJyFjt0OgjAMRl/IMTGI3BifZbKKnezHtUDk6S2JXhiJJk2atKenn56SwtD2gwXSTuo+QH68WuFoo38BymOXDUPhMbzhNgaGwAvr4xl7UANBNp3MRHSJK1yKxB6IBFrZfkbCMCJMfzEHnEx7UxkI5y8rX0H+6RGTZvSw25bVorBILKEt5IBzlqOTP5bVodo3dd3U7gmUXW8m'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://timedotcom.wordpress.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress.com" />
@@ -377,7 +377,84 @@ img.emoji {
 			<nav class="rail-articles-scroll">
 				<div id="section-sub-ad"></div>
 				<section class="article-list">
-					<h2 class="rail-list-heading">Just Posted</h2><div class="rail-article format-article  has-thumbnail " data-article="4580522">
+					<h2 class="rail-list-heading">Just Posted</h2><div class="rail-article format-article  has-thumbnail " data-article="4581456">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/gettyimages-620795280.jpg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/money/4581456/dollar-record-high-trump/?xid=homepage" data-event="left-hand-rail">The Dollar Is at Its Highest Value in 13 Years</a>
+			<time datetime="2016-11-23 15:02:04">10:02 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4577082">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/sarah-josepha-hale.jpg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4577082/thanksgiving-holiday-history-origins/?xid=homepage" data-event="left-hand-rail">Thanksgiving Wasn&#8217;t Always a National Holiday. This Woman Made It Happen</a>
+			<time datetime="2016-11-23 15:00:42">10:00 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4581392">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/seth-meyers-trump.png?w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4581392/donald-trump-seth-meyers/?xid=homepage" data-event="left-hand-rail">Seth Meyers Takes &#8216;A Closer Look&#8217; at Donald Trump&#8217;s Foreign Business Dealings</a>
+			<time datetime="2016-11-23 14:48:01">9:48 AM ET</time>
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4581267">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2015/08/brain-health-illo.jpg?crop=195px%2C13px%2C630px%2C630px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4581267/eli-lilly-company-alzheimers-disease-drug/?xid=homepage" data-event="left-hand-rail">A Promising Alzheimer’s Drug Doesn&#8217;t Work After All</a>
+			<time datetime="2016-11-23 14:35:31">9:35 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4580594">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/nawsa.jpeg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4580594/women-voting-bloc-history-myth/?xid=homepage" data-event="left-hand-rail">The History Behind the Myth That Women Vote as a Bloc</a>
+			<time datetime="2016-11-23 14:30:16">9:30 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4581366">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/gettyimages-624561756.jpg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4581366/dalai-lama-donald-trump/?xid=homepage" data-event="left-hand-rail">The Dalai Lama Isn&#8217;t Worried About Donald Trump Being President</a>
+			<time datetime="2016-11-23 14:22:52">9:22 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4581365">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/07/160726_inv_apple.jpg?crop=314px%2C4px%2C1409px%2C1409px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4581365/apple-iphone-tim-cook-stock-earnings/?xid=homepage" data-event="left-hand-rail">Apple Watchers Wonder: What&#8217;s the Next Big Thing?</a>
+			<time datetime="2016-11-23 14:17:29">9:17 AM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4580522">
 	<div class="content">
 		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/161121_col_rolling.jpg?crop=351px%2C0px%2C1400px%2C1401px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
 		<h3 class="rail-article-title">
@@ -405,83 +482,6 @@ img.emoji {
 		<h3 class="rail-article-title">
 			<a class="article-permalink" href="http://time.com/4579105/thanksgiving-grateful-gratitude/?xid=homepage" data-event="left-hand-rail">Thanksgiving: 4 Easy Ways to Become More Grateful</a>
 			<time datetime="2016-11-23 13:30:12">8:30 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4581325">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/gettyimages-625277472.jpg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4581325/bradd-pitt-fbi-cleared/?xid=homepage" data-event="left-hand-rail">Brad Pitt Cleared by the FBI in Plane Incident With His Son</a>
-			<time datetime="2016-11-23 13:25:53">8:25 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4581321">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-541022768.jpg?crop=1275px%2C0px%2C2537px%2C2536px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4581321/thomas-mair-jo-cox/?xid=homepage" data-event="left-hand-rail">Man Gets Life in Prison for Murder of British Lawmaker Jo Cox</a>
-			<time datetime="2016-11-23 13:23:05">8:23 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4581308">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4581308/donald-trump-nikki-haley-united-nations/?xid=homepage" data-event="left-hand-rail">Nikki Haley Will Serve as Donald Trump&#8217;s Ambassador to the United Nations</a>
-			<time datetime="2016-11-23 12:37:50">7:37 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4579452">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/11/162211_ca_contribution.jpg?crop=326px%2C190px%2C2294px%2C2294px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/money/4579452/millennials-mandatory-retirement-saving/?xid=homepage" data-event="left-hand-rail">Mandatory Saving for Retirement Gets a Thumbs Up From Millennials</a>
-			<time datetime="2016-11-23 11:00:51">6:00 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4579787">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/11/162211_pcl_nonresidents.jpg?quality=85&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/money/4579787/state-schools-out-of-state-students/?xid=homepage" data-event="left-hand-rail">The Best State Schools for Out-of-Staters</a>
-			<time datetime="2016-11-23 10:45:05">5:45 AM ET</time>
-		</h3>
-		<a href="http://time.com/money/topic/college-news-and-advice/" class="full-coverage-link" data-event="tile">College News and Advice</a>
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4579602">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/dsc_03.jpg?crop=2859px%2C672px%2C590px%2C590px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4579602/burma-myanmar-kachin-peace-fighting-suu-kyi/?xid=homepage" data-event="left-hand-rail">&#8216;We Cannot Believe Aung San Suu Kyi&#8217;: Why Many in Burma Are Losing Hope of Peace</a>
-			<time datetime="2016-11-23 09:24:00">4:24 AM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4581070">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-621428148.jpg?crop=454px%2C624px%2C530px%2C530px&amp;resize=74%2C74&amp;quality=85&amp;strip&amp;ssl=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4581070/turkey-erdogan-fired-dismissed-suspended-sacked-officials-total/?xid=homepage" data-event="left-hand-rail">Here&#8217;s a Time Line of the Insane Number of People Turkey&#8217;s President Has Fired Since July 15</a>
-			<time datetime="2016-11-23 08:17:29">3:17 AM ET</time>
 		</h3>
 		
 		
@@ -909,33 +909,6 @@ img.emoji {
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 
 				<figure class="home-brief-hero">
-					<a href="http://time.com/4581308/donald-trump-nikki-haley-united-nations/?xid=homepage"  data-event="the-brief">
-					
-					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="File photo of South Carolina Governor Nikki Haley speaking at the National Press Club in Washington" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
-					
-				</a>
-			</figure>
-
-
-
-			<div class="home-brief-title-and-excerpt">
-				<h2 class="home-icons-brief "><a href="http://time.com/4581308/donald-trump-nikki-haley-united-nations/?xid=homepage"  data-event="the-brief">Nikki Haley to be Trump's U.N. Envoy</a>
-				</h2>
-				<p class="home-excerpt">
-					South Carolina Gov. Nikki Haley will accept the nomination to the post of U.S. Ambassador to the United Nations from President-elect Donald Trump, according to two sources familiar with Trump's presidential transition
-				</p>
-
-
-
-			</div>
-			
-
-		</article>
-
-
-		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
-
-				<figure class="home-brief-hero">
 					<a href="http://time.com/4581321/thomas-mair-jo-cox/?xid=homepage"  data-event="the-brief">
 					
 					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-541022768.jpg?crop=1275px%2C0px%2C2537px%2C2536px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-541022768.jpg?crop=1275px%2C0px%2C2537px%2C2536px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-541022768.jpg?crop=1275px%2C0px%2C2537px%2C2536px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="BRITAIN-EU-POLITICS-CRIME" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
@@ -950,6 +923,33 @@ img.emoji {
 				</h2>
 				<p class="home-excerpt">
 					Thomas Mair was sentenced to life in prison for the murder of British politician Jo Cox after a seven-day trial. The 53-year-old unemployed gardener attacked the Labour MP in June, one week before the British referendum on leaving the European Union
+				</p>
+
+
+
+			</div>
+			
+
+		</article>
+
+
+		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
+
+				<figure class="home-brief-hero">
+					<a href="http://time.com/4581267/eli-lilly-company-alzheimers-disease-drug/?xid=homepage"  data-event="the-brief">
+					
+					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2015/08/brain-health-illo.jpg?crop=195px%2C13px%2C630px%2C630px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2015/08/brain-health-illo.jpg?crop=195px%2C13px%2C630px%2C630px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2015/08/brain-health-illo.jpg?crop=195px%2C13px%2C630px%2C630px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="TIME.com stock health brain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+					
+				</a>
+			</figure>
+
+
+
+			<div class="home-brief-title-and-excerpt">
+				<h2 class="home-icons-brief "><a href="http://time.com/4581267/eli-lilly-company-alzheimers-disease-drug/?xid=homepage"  data-event="the-brief">A Promising Alzheimer’s Drug Doesn't Work</a>
+				</h2>
+				<p class="home-excerpt">
+					The third try wasn’t the charm for Eli Lilly’s Alzheimer’s drug solanezumab. In the third test of the drug since it was developed in 2006, the compound failed once again to show significant benefit for people with mild disease
 				</p>
 
 
@@ -1007,9 +1007,9 @@ img.emoji {
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 
 				<figure class="home-brief-hero">
-					<a href="http://fortune.com/2016/11/22/trump-new-york-times-meeting/?xid=homepage"  data-event="the-brief">
+					<a href="http://time.com/4581308/donald-trump-nikki-haley-united-nations/?xid=homepage"  data-event="the-brief">
 					
-					<img data-src="https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=150&amp;h=150&amp;crop=1 800w" alt="US-TRUMP-POLITICS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="File photo of South Carolina Governor Nikki Haley speaking at the National Press Club in Washington" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 					
 				</a>
 			</figure>
@@ -1017,10 +1017,10 @@ img.emoji {
 
 
 			<div class="home-brief-title-and-excerpt">
-				<h2 class="home-icons-article "><a href="http://fortune.com/2016/11/22/trump-new-york-times-meeting/?xid=homepage"  data-event="the-brief">Trump Disavows the &#8216;Alt-Right&#8217;</a>
+				<h2 class="home-icons-video "><a href="http://time.com/4581308/donald-trump-nikki-haley-united-nations/?xid=homepage"  data-event="the-brief">Nikki Haley to be Trump's U.N. Envoy</a>
 				</h2>
 				<p class="home-excerpt">
-					Donald Trump said he doesn’t feel that he’s done anything to energize the alt-right movement in a meeting with the New York <i>Times</i>. “I don’t want to energize the group, and I disavow the group,” the president-elect said
+					South Carolina Gov. Nikki Haley will accept the nomination to the post of U.S. Ambassador to the United Nations from President-elect Donald Trump, according to two sources familiar with Trump's presidential transition
 				</p>
 
 
@@ -1115,6 +1115,33 @@ img.emoji {
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 
 				<figure class="home-brief-hero">
+					<a href="http://fortune.com/2016/11/22/trump-new-york-times-meeting/?xid=homepage"  data-event="the-brief">
+					
+					<img data-src="https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/11/donald-trump-ny-times.jpg?quality=85&amp;w=150&amp;h=150&amp;crop=1 800w" alt="US-TRUMP-POLITICS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+					
+				</a>
+			</figure>
+
+
+
+			<div class="home-brief-title-and-excerpt">
+				<h2 class="home-icons-article "><a href="http://fortune.com/2016/11/22/trump-new-york-times-meeting/?xid=homepage"  data-event="the-brief">Trump Disavows the &#8216;Alt-Right&#8217;</a>
+				</h2>
+				<p class="home-excerpt">
+					Donald Trump said he doesn’t feel that he’s done anything to energize the alt-right movement in a meeting with the New York <i>Times</i>. “I don’t want to energize the group, and I disavow the group,” the president-elect said
+				</p>
+
+
+
+			</div>
+			
+
+		</article>
+
+
+		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
+
+				<figure class="home-brief-hero">
 					<a href="http://time.com/4581062/melbourne-thunderstorm-asthma-predicted-prevented-cenk-suphioglu/?xid=homepage"  data-event="the-brief">
 					
 					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-5224218311.jpg?crop=970px%2C283px%2C882px%2C881px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-5224218311.jpg?crop=970px%2C283px%2C882px%2C881px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/gettyimages-5224218311.jpg?crop=970px%2C283px%2C882px%2C881px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="Hospital emergency department entrance" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
@@ -1193,33 +1220,6 @@ img.emoji {
 		</article>
 
 
-		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
-
-				<figure class="home-brief-hero">
-					<a href="http://time.com/4579714/donald-trump-nigel-farage-ambassador/?xid=homepage"  data-event="the-brief">
-					
-					<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/donald-trump-nigel-farage.jpg?crop=703px%2C40px%2C1020px%2C1020px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/donald-trump-nigel-farage.jpg?crop=703px%2C40px%2C1020px%2C1020px&amp;resize=100%2C100&amp;quality=85&amp;strip&amp;ssl=1 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/11/donald-trump-nigel-farage.jpg?crop=703px%2C40px%2C1020px%2C1020px&amp;resize=150%2C150&amp;quality=85&amp;strip&amp;ssl=1 800w" alt="Donald Trump Holds Campaign Rally In Jackson, MS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
-					
-				</a>
-			</figure>
-
-
-
-			<div class="home-brief-title-and-excerpt">
-				<h2 class="home-icons-article "><a href="http://time.com/4579714/donald-trump-nigel-farage-ambassador/?xid=homepage"  data-event="the-brief">Trump Makes Undiplomatic Call for Farage to Be U.S. Envoy</a>
-				</h2>
-				<p class="home-excerpt">
-					In a striking breach of diplomatic protocol, President-elect Donald Trump has suggested Nigel Farage, the "Brexit" champion who has been one of Trump's most vocal foreign champions, should be made the United Kingdom's ambassador to the U.S.
-				</p>
-
-
-
-			</div>
-			
-
-		</article>
-
-
 	</div>
 </section>
 <div id="ad-homepage-post-brief" data-position="blwbriefsubhp" data-cmad="true" data-size="454x40" data-type="tout" class="ad-homepage-post-brief"></div>
@@ -1254,8 +1254,8 @@ img.emoji {
 		<article class="home-columnists-article border-separated-article ">
 			
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/tavis-smiley/">Tavis Smiley</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4580007/tavis-smiley-america-unhinged/?xid=homepage" data-event="columnists">America Is Unhinged and Nobody Will Take the Blame</a></h4>
+				<h3 class="home-columnists-author"><a href="http://time.com/author/kevin-kelleher/">Kevin Kelleher</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4581365/apple-iphone-tim-cook-stock-earnings/?xid=homepage" data-event="columnists">Apple Watchers Wonder: What&#8217;s the Next Big Thing?</a></h4>
 			</div>
 			
 		</article>
@@ -1270,8 +1270,8 @@ img.emoji {
 		<article class="home-columnists-article border-separated-article ">
 			
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/adam-frankel/">Adam Frankel</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4578551/newton-minow-new-frontiersman/?xid=homepage" data-event="columnists">We Should Look to This New Frontiersman for Hope</a></h4>
+				<h3 class="home-columnists-author"><a href="http://time.com/author/tavis-smiley/">Tavis Smiley</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4580007/tavis-smiley-america-unhinged/?xid=homepage" data-event="columnists">America Is Unhinged and Nobody Will Take the Blame</a></h4>
 			</div>
 			
 		</article>
@@ -1286,8 +1286,8 @@ img.emoji {
 		<article class="home-columnists-article border-separated-article ">
 			
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/robert-p-jones/">Robert P. Jones</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4577752/donald-trump-transformation-white-evangelicals/?xid=homepage" data-event="columnists">Donald Trump and the Transformation of White Evangelicals</a></h4>
+				<h3 class="home-columnists-author"><a href="http://time.com/author/adam-frankel/">Adam Frankel</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4578551/newton-minow-new-frontiersman/?xid=homepage" data-event="columnists">We Should Look to This New Frontiersman for Hope</a></h4>
 			</div>
 			
 		</article>
@@ -1302,16 +1302,8 @@ img.emoji {
 		<article class="home-columnists-article border-separated-article ">
 			
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/joe-klein/">Joe Klein</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4574478/maintaining-democracy-civility-perspective/?xid=homepage" data-event="columnists">Why We Must Focus Now on Maintaining Democracy, Civility and Perspective</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-video ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/daniel-daddario/">Daniel D’Addario</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4577842/gilmore-girls-a-year-in-the-life-netflix-revival/?xid=homepage" data-event="columnists">Review: <em>Gilmore Girls: A Year in the Life</em> Is a Disappointing Return to Stars Hollow</a></h4>
+				<h3 class="home-columnists-author"><a href="http://time.com/author/robert-p-jones/">Robert P. Jones</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4577752/donald-trump-transformation-white-evangelicals/?xid=homepage" data-event="columnists">Donald Trump and the Transformation of White Evangelicals</a></h4>
 			</div>
 			
 		</article>
@@ -1320,6 +1312,14 @@ img.emoji {
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
 				<h3 class="home-columnists-author"><a href="http://time.com/author/laura-marling/">Laura Marling</a></h3>
 				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4576244/laura-marling-leonard-cohen/?xid=homepage" data-event="columnists">My Bitter, Unexpected Grief at Leonard Cohen's Death</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-video ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/daniel-daddario/">Daniel D’Addario</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4577842/gilmore-girls-a-year-in-the-life-netflix-revival/?xid=homepage" data-event="columnists">Review: <em>Gilmore Girls: A Year in the Life</em> Is a Disappointing Return to Stars Hollow</a></h4>
 			</div>
 			
 		</article>
@@ -1486,13 +1486,13 @@ img.emoji {
             <h2><a href="http://time.com/health/">Health</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
+                    <h3><a href="http://time.com/4581267/eli-lilly-company-alzheimers-disease-drug/?xid=homepage" data-event="hp-news" target="">A Promising Alzheimer’s Drug Doesn't Work</a></h3> 
+                </article>
+                <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4579105/thanksgiving-grateful-gratitude/?xid=homepage" data-event="hp-news" target="">4 Easy Ways to Become More Grateful on Thanksgiving </a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4581062/melbourne-thunderstorm-asthma-predicted-prevented-cenk-suphioglu/?xid=homepage" data-event="hp-news" target="">Deadly Asthma Outbreak In Melbourne Was 'Predictable'</a></h3> 
-                </article>
-                <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4580001/thanksgiving-turkey-tryptophan/?xid=homepage" data-event="hp-news" target="">The Truth About Turkey and Tryptophan</a></h3> 
+                    <h3><a href="http://time.com/4580757/semen-allergy-sex/?xid=homepage" data-event="hp-news" target="">You Asked: Can People Be Allergic to Semen?</a></h3> 
                 </article>
             </div>
         </div>
@@ -1500,13 +1500,13 @@ img.emoji {
             <h2><a href="http://time.com/world/">World</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
+                    <h3><a href="http://time.com/4581366/dalai-lama-donald-trump/?xid=homepage" data-event="hp-news" target="">The Dalai Lama Isn&#8217;t Worried About Donald Trump Being President</a></h3> 
+                </article>
+                <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581361/facebook-china-censorship-news-mark-zuckerberg/?xid=homepage" data-event="hp-news" target="">Facebook Reportedly Willing to Restrict News Stories in China</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581321/thomas-mair-jo-cox/?xid=homepage" data-event="hp-news" target="">Man Gets Life in Prison for Murder of British Lawmaker</a></h3> 
-                </article>
-                <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4579602/burma-myanmar-kachin-peace-fighting-suu-kyi/?xid=homepage" data-event="hp-news" target="">Burma's Army Has No Interest in Peace</a></h3> 
                 </article>
             </div>
         </div>
@@ -1542,13 +1542,13 @@ img.emoji {
             <h2><a href="http://time.com/entertainment/">Entertainment</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
+                    <h3><a href="http://time.com/4581392/donald-trump-seth-meyers/?xid=homepage" data-event="hp-news" target="">Seth Meyers Takes &#8216;A Closer Look&#8217; at Donald Trump&#8217;s Foreign Business Dealings</a></h3> 
+                </article>
+                <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581325/bradd-pitt-fbi-cleared/?xid=homepage" data-event="hp-news" target="">FBI Clears Brad Pitt in Plane Incident With His Son</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581099/scorsese-silence-andrew-garfield-liam-neeson/?xid=homepage" data-event="hp-news" target="">See the First Trailer for Martin Scorsese's <i>Silence</i></a></h3> 
-                </article>
-                <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4581047/amber-heard-sued-london-fields/?xid=homepage" data-event="hp-news" target="">Amber Heard Is Being Sued for $10 Million</a></h3> 
                 </article>
             </div>
         </div>
@@ -1556,13 +1556,13 @@ img.emoji {
             <h2><a href="http://time.com/tech/">Tech</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
+                    <h3><a href="http://time.com/4581365/apple-iphone-tim-cook-stock-earnings/?xid=homepage" data-event="hp-news" target="">Apple Watchers Wonder: What&#8217;s the Next Big Thing?</a></h3> 
+                </article>
+                <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581361/facebook-china-censorship-news-mark-zuckerberg/?xid=homepage" data-event="hp-news" target="">Facebook Reportedly Willing to Restrict News Stories in China</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
                     <h3><a href="http://time.com/4581066/catholic-guilt-sin-sinder-app-confession-tinder-sindr/?xid=homepage" data-event="hp-news" target="">Over Tinder? Try 'Sindr,' the Vatican's New Confession App </a></h3> 
-                </article>
-                <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4576469/macbook-apple-buyers-guide-which-one-buy-pro-air-ipad/?xid=homepage" data-event="hp-news" target="">Which Apple Laptop Should You Buy?</a></h3> 
                 </article>
             </div>
         </div>
@@ -1935,7 +1935,7 @@ The TIME Team
 
 		<div id="meter-ad-slot" style="display:none;" ></div>	<div style="display:none">
 	</div>
-<script>Time.bootstrap = {"branding":"time","auth_url":"https:\/\/auth.time.com\/","fb_app_id":"53177223193","trending_videos":[{"id":4581099,"title":"See the First Trailer for Martin Scorsese&#8217;s Highly Anticipated <i>Silence<\/i>","url":"http:\/\/time.com\/4581099\/scorsese-silence-andrew-garfield-liam-neeson\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"http:\/\/timedotcom.files.wordpress.com\/2016\/11\/screen-shot-2016-11-23-at-12-24-09-pm.png?w=100&h=100&crop=1","src":{"landscape_large":"http:\/\/timedotcom.files.wordpress.com\/2016\/11\/screen-shot-2016-11-23-at-12-24-09-pm.png?w=550&h=367&crop=1","large":"http:\/\/timedotcom.files.wordpress.com\/2016\/11\/screen-shot-2016-11-23-at-12-24-09-pm.png?w=405&h=229&crop=1","square":"http:\/\/timedotcom.files.wordpress.com\/2016\/11\/screen-shot-2016-11-23-at-12-24-09-pm.png?w=600&h=600&crop=1"},"credit":"'the film stage' - fb","caption":"andrew garfield in scorseses's 'silence' trailer","title":"screen-shot-2016-11-23-at-12-24-09-pm","alt":"andrew garfield in scorseses's 'silence' trailer","providers":[],"masonry":{"small_width":300,"small_height":156,"large_width":625,"large_height":324}},"index":1},{"id":4578748,"title":"Brad Pitt, Marion Cotillard and the Long History of the Rumor Mill at the Box Office","url":"http:\/\/time.com\/4578748\/allied-brad-pitt-marion-cotillard-rumors-box-office\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"http:\/\/i1.wp.com\/timedotcom.files.wordpress.com\/2016\/11\/marion-cotillard-brad-pitt.jpg?crop=378px%2C0px%2C1436px%2C1436px&resize=100%2C100&quality=85&strip","src":{"landscape_large":"http:\/\/i1.wp.com\/timedotcom.files.wordpress.com\/2016\/11\/marion-cotillard-brad-pitt.jpg?crop=0px%2C0px%2C2359px%2C1574px&resize=550%2C367&quality=85&strip","large":"http:\/\/timedotcom.files.wordpress.com\/2016\/11\/marion-cotillard-brad-pitt.jpg?quality=85&w=405&h=229&crop=1","square":"http:\/\/i1.wp.com\/timedotcom.files.wordpress.com\/2016\/11\/marion-cotillard-brad-pitt.jpg?crop=378px%2C0px%2C1436px%2C1436px&resize=600%2C600&quality=85&strip"},"credit":"Steve Granitz\u2014WireImage\/Getty Images","caption":"Marion Cotillard and Brad Pitt arrive at a fan event for \"Allied\"  on November 9, 2016 in Westwood, California.","title":"Marion Cotillard and Brad Pitt arrive at a fan event for \"Allied\"  on November 9, 2016 in Westwood, California.","alt":"Marion Cotillard and Brad Pitt arrive at a fan event for \"Allied\" on November 9, 2016 in Westwood, California.","providers":[],"masonry":{"small_width":300,"small_height":382,"large_width":625,"large_height":795}},"index":2}],"most_popular_stories":[{"id":4570237,"title":"Who Should Be TIME&#8217;s Person of the Year for 2016?","url":"http:\/\/time.com\/4570237\/person-of-the-year-poll-2016\/"},{"id":4581099,"title":"See the First Trailer for Martin Scorsese&#8217;s Highly Anticipated <i>Silence<\/i>","url":"http:\/\/time.com\/4581099\/scorsese-silence-andrew-garfield-liam-neeson\/"},{"id":4557265,"title":"13 Shows and Movies to Stream Over Thanksgiving","url":"http:\/\/time.com\/4557265\/thanksgiving-stream-movies-television\/"},{"id":4580869,"title":"President Obama Pokes Fun at Michael Jordan Over Crying Meme and <i>Space Jam<\/i>","url":"http:\/\/time.com\/4580869\/crying-michael-jordan-president-obama-meme-space-jam\/"},{"id":4579777,"title":"Apple Is Teasing a Black Friday Sale for the First Time in Years","url":"http:\/\/time.com\/4579777\/apple-black-friday-2016\/"}],"activate_countdown_clock":false,"activate_vote_today_header":false,"activate_vote_today_midnight_header":false,"dynamic_header":true,"dynamic_header_name":"100_photos_header_activate","subscribe_link_mobile":"https:\/\/subscription.time.com\/storefront\/link\/1003145.html","subscribe_link_desktop":"https:\/\/subscription.time.com\/storefront\/link\/1003145.html","initial_omniture":{"prop7":"main","pageName":"time|home|main","prop16":"home","channel":"time","prop64":"v2"},"popularVideos":{"time":[5212459277001,5221225753001,5217318292001,5212459289001,5212840491001,5214767642001,5214615024001,5221113865001,5218148444001,5214667910001,5214308180001,5213172497001,5212788565001,5212879954001,5212459221001,5217584462001,5217412200001,5212914199001,5212459275001,5212459224001],"money":[5214646056001,5214667895001,5216698879001,5214744345001,5212712599001,5214297802001,5212712563001,5219135776001,5219095777001,5220655426001]}}</script><link rel='stylesheet' id='animate-css'  href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css?ver=4.6.1-RC1-38499' type='text/css' media='all' />
+<script>Time.bootstrap = {"branding":"time","auth_url":"https:\/\/auth.time.com\/","fb_app_id":"53177223193","trending_videos":[{"id":4581392,"title":"Seth Meyers Takes &#8216;A Closer Look&#8217; at Donald Trump&#8217;s Foreign Business Dealings","url":"http:\/\/time.com\/4581392\/donald-trump-seth-meyers\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/seth-meyers-trump.png?w=100&h=100&crop=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/seth-meyers-trump.png?w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/seth-meyers-trump.png?w=405&h=229&crop=1","square":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/seth-meyers-trump.png?w=600&h=600&crop=1"},"credit":"YouTube","caption":"","title":"seth-meyers-trump","alt":"","providers":[],"masonry":{"small_width":300,"small_height":165,"large_width":625,"large_height":344}},"index":1},{"id":4581308,"title":"Nikki Haley Will Serve as Donald Trump&#8217;s Ambassador to the United Nations","url":"http:\/\/time.com\/4581308\/donald-trump-nikki-haley-united-nations\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"http:\/\/i0.wp.com\/timedotcom.files.wordpress.com\/2016\/11\/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&resize=100%2C100&quality=85&strip&ssl=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/nikki-haley-donald-trump.jpg?quality=85&w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/11\/nikki-haley-donald-trump.jpg?quality=85&w=405&h=229&crop=1","square":"http:\/\/i0.wp.com\/timedotcom.files.wordpress.com\/2016\/11\/nikki-haley-donald-trump.jpg?crop=550px%2C0px%2C1705px%2C1705px&resize=600%2C600&quality=85&strip&ssl=1"},"credit":"Kevin Lamarque\u2014Reuters","caption":"South Carolina Governor Nikki Haley speaks at the National Press Club in Washington, D.C., on Sept. 2, 2015. ","title":"File photo of South Carolina Governor Nikki Haley speaking at the National Press Club in Washington","alt":"File photo of South Carolina Governor Nikki Haley speaking at the National Press Club in Washington","providers":[],"masonry":{"small_width":300,"small_height":200,"large_width":625,"large_height":416}},"index":2}],"most_popular_stories":[{"id":4570237,"title":"Who Should Be TIME&#8217;s Person of the Year for 2016?","url":"http:\/\/time.com\/4570237\/person-of-the-year-poll-2016\/"},{"id":4557265,"title":"13 Shows and Movies to Stream Over Thanksgiving","url":"http:\/\/time.com\/4557265\/thanksgiving-stream-movies-television\/"},{"id":4580869,"title":"President Obama Pokes Fun at Michael Jordan Over Crying Meme and <i>Space Jam<\/i>","url":"http:\/\/time.com\/4580869\/crying-michael-jordan-president-obama-meme-space-jam\/"},{"id":4581099,"title":"See the First Trailer for Martin Scorsese&#8217;s Highly Anticipated <i>Silence<\/i>","url":"http:\/\/time.com\/4581099\/scorsese-silence-andrew-garfield-liam-neeson\/"},{"id":4579777,"title":"Apple Is Teasing a Black Friday Sale for the First Time in Years","url":"http:\/\/time.com\/4579777\/apple-black-friday-2016\/"}],"activate_countdown_clock":false,"activate_vote_today_header":false,"activate_vote_today_midnight_header":false,"dynamic_header":true,"dynamic_header_name":"100_photos_header_activate","subscribe_link_mobile":"https:\/\/subscription.time.com\/storefront\/link\/1003145.html","subscribe_link_desktop":"https:\/\/subscription.time.com\/storefront\/link\/1003145.html","initial_omniture":{"prop7":"main","pageName":"time|home|main","prop16":"home","channel":"time","prop64":"v2"},"popularVideos":{"time":[5212459277001,5221225753001,5217318292001,5212459289001,5212840491001,5214767642001,5214615024001,5221113865001,5218148444001,5214667910001,5214308180001,5213172497001,5212788565001,5212879954001,5212459221001,5217584462001,5217412200001,5212914199001,5212459275001,5212459224001],"money":[5214646056001,5214667895001,5216698879001,5214744345001,5212712599001,5214297802001,5212712563001,5219135776001,5219095777001,5220655426001]}}</script><link rel='stylesheet' id='animate-css'  href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css?ver=4.6.1-RC1-38499' type='text/css' media='all' />
 <link rel='stylesheet' id='all-css-2-2' href='https://s1.wp.com/wp-content/themes/vip/time2014/css/one-offs/ad_blocker_homepage_collapse.css?m=1462909959h' type='text/css' media='all' />
 <script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/likes/queuehandler.js?m=1467034812h'></script>
 <script type='text/javascript' src='//tags.tiqcdn.com/utag/timeinc/time.com/prod/utag.js?ver=4.6.1-RC1-38499'></script>
@@ -1943,7 +1943,7 @@ The TIME Team
 <script type='text/javascript' src='https://s1.wp.com/_static/??-eJyVkF0OwjAMgy9ESYeKJh4QZ6lGVlLSHzUZaLen2gnoq+XPsg3fapaSFbOCvjChwIcqKCW82MlBFHiS6CEYbX55Uw7nKCf4E6yF95WYDZfFs2hpPuBQAG+BsowgmxKT7iPIsa8bVxpap5gqe8WhetU3pf5FZx7pPrn5Njtr7TX+ADskjng='></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
-var TIME_DFP = {"zone":"homepage","params":{"ptype":"home","ch":"home","etype":"video"}};
+var TIME_DFP = {"zone":"homepage","params":{"ptype":"home","ch":"home"}};
 /* ]]> */
 </script>
 <script type='text/javascript' src='http://tia.timeinc.net/time/tia_tgx.js'></script>
@@ -1980,7 +1980,7 @@ _stq = window._stq || [];
 _tkq.push(['storeContext', {'blog_id':'1359921','blog_tz':'-5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
 _stq.push(['view', {'blog':'1359921','v':'wpcom','tz':'-5','user_id':'0','subd':'timedotcom'}]);
 function st_vt() {var x=document.createElement("img");x.src="http://pixel.wp.com/g.gif?blog=1359921&v=wpcomvt&tz=-5&user_id=0&subd=timedotcom&rand="+Math.random();}
-_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1BNmNJfGhxNCVxUDExYmtXRThKbHcwXTdELHB3X1UyXVV0QyUtL3ZnJUpbXWVHQ2EuPzhPZW52RGYwQmVITzU1NF9aLmFzZ2FdNj1iW1JLeXoscX5tJU1vRG5XbT9CRG4vdXcraF9lYW0taT1TNWQ5ZXdYPytwazRzQ3dWbGs0LG41OG90dEwuL11XQUclYlo/QixVcS5FPTFRPzgzUmlaYzFTcUZzT055aUV6U1tzbm4wMWNlRVpreXdnbzFMOGxXSHU2Ul14JjZbUmtsQ0wsUnNieTFFLCw4QlRbTw=='}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1BNmNJfGhxNCVxUDExYmtXRThKbHcwXTdELHB3X1UyXVV0QyUtL3ZnJUpbXWVHQ2EuPzhPZW52RGYwQmVITzU1NF9aLmFzZ2FdNj1iW1JLeXoscX5tJU1vRG5XbT9CRG4vdXcraF9lYW0taT1TNWQ5LXlGYVRZJVtdWGhEJjNrckpFTEJhZzJIUzkufnkzZFRLVjNHR2NjOEktUmgyS3NtSEdzbGctNSZkLXB8bTNdV2csP2FjVy1ycTRIbUloMHwuUEoyX28lUjBmMTBSSTJ3JkJHMUtuQmIzRGsuag=='}]);
 _stq.push([ 'clickTrackerInit', '1359921', '0' ]);
 	</script>
 <noscript><img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
@@ -2026,8 +2026,8 @@ if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
 <script>typeof TiiAdTrackRevSci == 'function' && TiiAdTrackRevSci();</script></body>
 </html>
 <!--
-	generated 265 seconds ago
-	generated in 0.534 seconds
+	generated 98 seconds ago
+	generated in 0.511 seconds
 	served from batcache in 0.002 seconds
-	expires in 35 seconds
+	expires in 202 seconds
 -->
